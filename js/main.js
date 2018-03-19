@@ -31,18 +31,19 @@ function render() {
 	context.beginPath();
 	context.strokeStyle = 'blue';
 	context.lineWidth = 2;
-	let yStart = 10 + lineGap / 2;
-	let yEnd = canvas.height - 10 - 0.25 * lineGap;
+	let yGap = 0;
+	let yStart = yGap + lineGap / 2;
+	let yEnd = canvas.height - yGap - 0.25 * lineGap;
 	for (let y = yStart; y <= yEnd; y += lineGap) {
-		let gap = 10;
+		let gap = 0;
 		let started = false;
-		for (let x = gap; x < canvas.width - gap; x += 2) {
+		for (let x = gap; x < canvas.width - gap; x += 4) {
 			let sineT = (x / 5 + ms / 100);
-			let sineAmt = Math.sin((x - y) / 300 + ms / 500);
+			let sineAmt = Math.sin((x - y) / 300 + ms / 1000);
 			sineAmt = 0.5 + 0.5 * sineAmt;
 			let sineVal = sineAmt * Math.sin(sineT);
 
-			let randomVal = (Math.random() < 0.5) ? 1 : 0;
+			let randomVal = (Math.random() < 0.5) ? 1.2 : -0.2;
 			randomVal = (1 - sineAmt) * randomVal;
 
 			if (started) {
