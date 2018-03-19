@@ -1,7 +1,7 @@
 {
-  "name": "chillout",
+  "name": "hello",
   "version": "1.0.0",
-  "description": "Chill Out",
+  "description": "Hello",
   "main": "index.js",
   "watch": {
     "webpack": "js/*.js"
