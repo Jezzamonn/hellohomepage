@@ -10,6 +10,10 @@ function init() {
 	window.requestAnimationFrame(everyFrame);
 }
 
+function addEmail() {
+	
+}
+
 function everyFrame() {
 	update();
 	render();
@@ -58,6 +62,13 @@ function render() {
 	context.stroke();
 }
 
+function handleResize(evt) {
+	canvas.width = window.innerWidth;
+	canvas.height = window.innerHeight;
+
+	render();
+}
+
 function easeInOut(t, amt) {
 	let tPow = Math.pow(t, amt);
 	return tPow / (tPow + Math.pow(1 - t, amt));
@@ -70,13 +81,6 @@ function everCloser(val) {
     else {
     	return val + (1 - val) * Math.random();
     }
-}
-
-function handleResize(evt) {
-	canvas.width = window.innerWidth;
-	canvas.height = window.innerHeight;
-
-	render();
 }
 
 init();
