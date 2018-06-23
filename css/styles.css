@@ -27,6 +27,10 @@ h1 {
 	-3px -3px 0 white;
 }
 
+h1 span {
+	display: inline-block;
+}
+
 h2 {
 	font-size: 40px;
 	text-shadow:
@@ -34,6 +38,10 @@ h2 {
 	2px -2px 0 white,
 	-2px 2px 0 white,
 	-2px -2px 0 white;
+}
+
+h2 a {
+	display: inline-block;
 }
 
 p {

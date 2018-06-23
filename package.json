@@ -2,13 +2,12 @@
   "name": "hello",
   "version": "1.0.0",
   "description": "Hello",
-  "main": "index.js",
   "watch": {
     "webpack": "js/*.js"
   },
   "scripts": {
     "start": "http-server",
-    "build": "webpack || exit 1",
+    "webpack": "webpack || exit 1",
     "watch": "npm-watch",
     "reload": "reload -b"
   },
@@ -23,5 +22,8 @@
     "npm-watch": "^0.3.0",
     "reload": "^2.3.0",
     "webpack": "^3.11.0"
+  },
+  "dependencies": {
+    "animejs": "^2.2.0"
   }
 }
