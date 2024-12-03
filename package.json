@@ -12,10 +12,15 @@
     "clean": "rm -rf build/"
   },
   "watch": {
-    "webpack": "js/*.js",
+    "webpack": {
+      "patterns": [
+        "js/**"
+      ],
+      "extensions": "js"
+    },
     "static": {
       "patterns": [
-        "src/static/**"
+        "static/**"
       ],
       "extensions": "html,css,png,gif,mp3,ttf,svg"
     }

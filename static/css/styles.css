@@ -87,6 +87,15 @@ a:hover {
 	color: #444444;
 }
 
+.main-link {
+	transition: transform 0.3s cubic-bezier(.36,2.5,.28,.87);
+	transform: none;
+}
+
+.main-link:hover {
+	transform: scale(1.1);
+}
+
 .divider {
 	height: 1px;
 }
