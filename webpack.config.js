@@ -1,25 +1,31 @@
-var path = require('path');
-var webpack = require('webpack');
+const path = require('path');
+const webpack = require('webpack');
 
-module.exports = {
-    entry: './js/main.js',
-    output: {
-        path: path.resolve(__dirname, 'build/js'),
-        filename: 'main.bundle.js'
+const client = {
+    resolve: {
+        extensions: ['.ts', '.tsx', '.js', '.json']
     },
     module: {
-        loaders: [
+        rules: [
             {
-                test: /\.js$/,
+                test: /\.(ts|js)x?$/,
+                exclude: /node_modules/,
                 loader: 'babel-loader',
-                query: {
-                    presets: ['env']
-                }
             }
         ]
     },
     stats: {
         colors: true
     },
+    mode: 'development',
+    entry: './js/main.js',
+    output: {
+        path: path.resolve(__dirname, 'build/js'),
+        filename: 'main.bundle.js'
+    },
     devtool: 'source-map'
-};
+}
+
+module.exports = [
+    Object.assign({}, client),
+];
