@@ -2,26 +2,35 @@
   "name": "hello",
   "version": "1.0.0",
   "description": "Hello",
-  "watch": {
-    "webpack": "js/*.js"
-  },
   "scripts": {
     "start": "http-server",
+    "static": "mkdir -p build/ && rsync -a --delete --exclude js/ static/ build/",
     "webpack": "webpack || exit 1",
     "watch": "npm-watch",
-    "reload": "reload -b"
+    "reload": "reload -b -d build",
+    "build": "npm run static && npm run webpack",
+    "clean": "rm -rf build/"
+  },
+  "watch": {
+    "webpack": "js/*.js",
+    "static": {
+      "patterns": [
+        "src/static/**"
+      ],
+      "extensions": "html,css,png,gif,mp3,ttf,svg"
+    }
   },
   "author": "Jezzamon",
   "license": "ISC",
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-preset-env": "^1.6.1",
-    "http-server": "^0.11.1",
-    "npm-watch": "^0.3.0",
-    "reload": "^2.3.0",
-    "webpack": "^3.11.0"
+    "babel-core": "^6.26.3",
+    "babel-loader": "^9.2.1",
+    "babel-preset-env": "^1.7.0",
+    "http-server": "^14.1.1",
+    "npm-watch": "^0.13.0",
+    "reload": "^3.3.0",
+    "webpack": "^5.97.0"
   },
   "dependencies": {
     "animejs": "^2.2.0"
