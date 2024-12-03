@@ -96,9 +96,16 @@ a:hover {
 	color: #444444;
 }
 
-.pop-link:hover {
+.pop-link {
 	transition: transform 0.3s cubic-bezier(.36,2.5,.28,.87);
+}
+
+.pop-link:hover {
 	transform: scale(1.1);
+}
+
+.eh-link {
+	transition: transform 0.2s ease-out;
 }
 
 .eh-link:hover {
